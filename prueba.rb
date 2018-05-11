@@ -14,6 +14,7 @@ while opcion !=4
   opcion = gets.chomp.to_i
   case opcion
   when 1
+    system "clear"
     puts "1 permite generar un archivo con el nombre de cada alumno y el promedio de sus notas."
     data.each do |x|
     lineas = []
@@ -26,7 +27,9 @@ while opcion !=4
     file.puts "#{lineas[0]} tiene un promedio de #{promedio}"
     file.close
     end
+
   when 2
+    system "clear"
     puts "2 Debe contar la cantidad de inasistencias totales y mostrarlas en pantalla."
     data.each do |x|
     linea = x.split(", ").map(&:chomp)
@@ -34,7 +37,9 @@ while opcion !=4
     puts "#{linea[0]} tiene #{linea.count("A")} inasistencia" if y == "A"
     end
     end
+
   when 3
+    system "clear"
     puts "3 mostrar los nombres de los alumnos aprobados"
     def promedio(z, nota = 5.0)
       z.each do |x|
@@ -51,7 +56,8 @@ while opcion !=4
   nota2 = nota
   nota = 5 if [1,2,3,4,5,6,7,8,9,10].include?(nota2) == false
   promedio(z,nota)
+
 else
-  puts "La opcion es invalida" if opcion !=4 
+  puts "La opcion es invalida" if opcion !=4
   end
 end
